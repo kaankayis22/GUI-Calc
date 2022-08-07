@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style>
+
+body {
+  padding:0px:
+  margin:0px;
+}
+
+.wrap {
+  padding:0px;
+  margin-top:0px;
+}
+#output {
+  height:20px;
+  width:325px;
+  border:2px solid black;
+  margin:bottom:10px;
+  background-color:white;
+  text-align:center;
+}
+
+#body {
+  padding:0px;
+  margin:0px;
+}
+.box {
+  width:80px;
+  height:40px;
+  border: 1px solid black;
+  text-align:center;
+  background-color:grey;
+  color:white;
+  margin-bottom:2px;
+  margin-top:4px;
+}
+.sbox {
+  width:164px;
+  height:40px;
+  border: 1px solid black;
+  text-align:center;
+  background-color:grey;
+  color:white;
+}
+#backg {
+  background-color:blue;
+
+}
+
+#bigtextbox {
+  margin-top:0px;
+  background-color:green;
+  border: 2px solid black
+  width:100px;
+  height:150px;
+
+}
+
+#textbox {
+ font-size:50px;
+text-align:Center;
+font-family:Snell Roundhand;
+}
+
+#text {
+ font-size:20px;
+text-align:Center;
+font-family:arial;
+}
+
+</style>
+</head>
+<body>
+<div id="backg">
+<div id="output">Your inputs/answers will go here
+</div>
+<div class="wrap">
+<button type="button" class="box" onclick="cle()">Clear</button>
+<button type="button" class="box" onclick="neg()">+/-</button>
+<button type="button" class="box" onclick="per()">%</button>
+<button type="button" class="box" onclick="div()"> ÷</button>
+</div>
+<div class="wrap">
+<button type="button" class="box" onclick="sev()">7</button>
+<button type="button" class="box" onclick="eig()">8</button>
+<button type="button" class="box" onclick="nin()">9</button>
+<button type="button" class="box" onclick="times()">x</button>
+</div>
+<div class="wrap">
+  <button type="button" class="box" onclick="four()">4</button>
+  <button type="button" class="box" onclick="fiv()">5</button>
+  <button type="button" class="box" onclick="six()">6</button>
+  <button type="button" class="box" onclick="min()">-</button>
+</div>
+<div class="wrap">
+<button type="button" class="box" onclick="one()">1</button>
+<button type="button" class="box" onclick="two()">2</button>
+<button type="button" class="box" onclick="thre()">3</button>
+<button type="button" class="box" onclick="plu()">+</button>
+</div>
+<div id="wrap">
+  <button type="button" class="box" onclick="zer()">0</button>
+  <button type="button" class="box" onclick="dot()">.</button>
+  <button type="button" class="sbox" onclick="equ()">=</button>
+</div>
+</div>
+
+
+
+<div id="bigtextbox">
+<div id="textbox">Hi</div>
+<div id="text">This is a Calculator made by Kaan Kayis. As of now, you can only add single four, single digit numbers.</div>
+</div>
+
+
+
+
+
+
+
+<script>
+var num1 = 0
+var num2 = 0
+var clicknum=0
+var func = 0
+var answer = 0
+var num3 = 0
+var num4 = 0 
+
+
+function zer() {
+document.getElementById("output").innerHTML = 0;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 0;
+}
+
+if (clicknum == 2) {
+  num2=0
+}
+
+if (clicknum == 3) {
+  num3=0
+}
+
+if (clicknum == 4) {
+  num4=0
+}
+
+}
+
+function dot() {
+document.getElementById("output").innerHTML = num1+".";
+}
+function equ() {
+if (func == 1) {
+  if (clicknum == 2) {
+ answer = num1 + num2;
+  }
+  if (clicknum == 3) {
+ answer = num1 + num2 + num3;
+  }
+
+  if (clicknum == 4) {
+ answer = num1 + num2 + num3 + num4;
+  }
+ document.getElementById("output").innerHTML = answer;
+}
+if (func == 2) {
+  if (clicknum == 2) {
+ answer = num1 - num2;
+  }
+  if (clicknum == 3) {
+ answer = num1 - num2 - num3;
+  }
+
+  if (clicknum == 4) {
+ answer = num1 - num2 - num3 - num4;
+  }
+ document.getElementById("output").innerHTML = answer;
+}
+if (func == 3) {
+if (clicknum == 2) {
+ answer = num1 * num2;
+  }
+  if (clicknum == 3) {
+ answer = num1 * num2 * num3;
+  }
+
+  if (clicknum == 4) {
+ answer = num1 * num2 * num3 * num4;
+  }
+ document.getElementById("output").innerHTML = answer;
+}
+if (func == 4) {
+if (clicknum == 2) {
+ answer = num1 / num2;
+  }
+  if (clicknum == 3) {
+ answer = num1 / num2 / num3;
+  }
+
+  if (clicknum == 4) {
+ answer = num1 / num2 / num3 / num4;
+  }
+ document.getElementById("output").innerHTML = answer;
+}
+}
+function one() {
+document.getElementById("output").innerHTML = 1;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 1;
+}
+
+if (clicknum == 2) {
+  num2=1
+}
+
+if (clicknum == 3) {
+  num3=1
+}
+
+if (clicknum == 4) {
+  num4=1
+}
+}
+
+function two() {
+ document.getElementById("output").innerHTML = 2;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 2;
+}
+
+if (clicknum == 2) {
+  num2=2
+}
+
+if (clicknum == 3) {
+  num3=2
+}
+
+if (clicknum == 4) {
+  num4=2
+}
+
+}
+
+function thre() {
+document.getElementById("output").innerHTML = 3;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 3;
+}
+
+if (clicknum == 2) {
+  num2=3
+}
+
+if (clicknum == 3) {
+  num3=3
+}
+
+if (clicknum == 4) {
+  num4=3
+}
+}
+
+function plu() {
+func=1
+}
+function four() {
+  document.getElementById("output").innerHTML = 4;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 4;
+}
+
+if (clicknum == 2) {
+  num2=4
+}
+
+if (clicknum == 3) {
+  num3=4
+}
+
+if (clicknum == 4) {
+  num4=4
+}
+}
+function fiv() {
+  document.getElementById("output").innerHTML = 5;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 5;
+}
+
+if (clicknum == 2) {
+  num2=5
+}
+
+if (clicknum == 3) {
+  num3=5
+}
+
+if (clicknum == 4) {
+  num4=5
+}
+}
+function six() {
+ document.getElementById("output").innerHTML = 6;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 6;
+}
+
+if (clicknum == 2) {
+  num2=6
+}
+
+if (clicknum == 3) {
+  num3=6
+}
+
+if (clicknum == 4) {
+  num4=6
+}
+}
+function min() {
+  func=2
+}
+function times() {
+ func=3
+}
+function sev() {
+document.getElementById("output").innerHTML = 7;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 7;
+}
+
+if (clicknum == 2) {
+  num2=7;
+}
+
+if (clicknum == 3) {
+  num3=7;
+}
+
+if (clicknum == 4) {
+  num4=7;
+}
+}
+function eig() {
+document.getElementById("output").innerHTML = 8;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 8;
+}
+
+if (clicknum == 2) {
+  num2=8
+}
+
+if (clicknum == 3) {
+  num3=8
+}
+
+if (clicknum == 4) {
+  num4=8
+}
+}
+
+function nin() {
+document.getElementById("output").innerHTML = 9;
+clicknum = clicknum+1;
+
+if (clicknum == 1) {
+num1 = 9;
+}
+
+if (clicknum == 2) {
+  num2=9
+}
+
+if (clicknum == 3) {
+  num3=9
+}
+
+if (clicknum == 4) {
+  num4=9
+}
+}
+function div() {
+ func=4
+}
+function per() {
+ if (clicknum == 1) {
+num1 = num1/100;
+}
+
+if (clicknum == 2) {
+  num2= num2/100;
+}
+
+if (clicknum == 3) {
+  num3= num3/100;
+}
+
+if (clicknum == 4) {
+  num4= num4/100;
+}
+document.getElementById("output").innerHTML = ""+num1;
+}
+
+function cle() {
+document.getElementById("output").innerHTML = "";
+num1 = 0
+num2 = 0
+clicknum=0
+func = 0
+answer = 0
+num3 = 0
+num4 = 0 
+
+}
+
+
+function neg() {
+ if (clicknum == 1) {
+num1 = num1 *-1;
+}
+
+if (clicknum == 2) {
+  num2= num2 *-1;
+}
+
+if (clicknum == 3) {
+  num3= num3 *-1;
+}
+
+if (clicknum == 4) {
+  num4= num4 *-1;
+}
+document.getElementById("output").innerHTML = ""+num1;
+}
+
+
+</script>
+</body>
+</html>
